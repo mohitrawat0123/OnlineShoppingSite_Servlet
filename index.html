@@ -1,0 +1,69 @@
+<html>
+<HEAD>
+<STYLE>body,input{font-family:Calibri,Arial}</STYLE>
+	<script type="text/javascript">	
+		window.history.forward(); 
+		function noBack(){
+			window.history.forward();
+		}		
+		function checkCookie(){
+			var form=document.form1;
+			var name=form.userId.value;
+			var pass=form.pass.value;
+			if(navigator.cookieEnabled==false){
+				document.write("<h2>X--Enable COOKIES first--X</h2>");
+				document.close();
+			}else 
+				if(name=="" || pass==""){
+					document.write("<h3>Enter both name && password !!</h3>");
+					document.close();
+				}else	return;
+			var rem=document.getElementById("remember");
+			if(rem=="yes"){
+				window.localStorage.setItem('userID',name);
+				window.localStorage.setItem('pass',pass);
+			}
+		}
+	</script>
+</HEAD>
+<BODY onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+<table width = "100%" align="center" valign = "middle" border = "0" cellspacing = "0" cellpadding = "0">
+<tr>
+<td align = "center" valign = "middle">
+<form method = "post" action ="login" name="form1">
+<table width = "250" border = "1" cellspacing = "0" cellpadding = "0">
+<tr><td colspan = "2" align  = "center"><h2> Login </h2></td></tr>
+<tr><td>User name</td>
+<td><input type = "text" name="userId" id="userId"/></td>
+</tr>
+<tr><td>Password</td>
+<td><input type= "password" name="pass" id="pass"/></td></tr>
+<tr><td colspan = "2" align  = "center">
+Remember<input type="checkbox" name="remember" id="remember" value="yes">
+<input type = "submit" name = "login" value = "login" onClick="checkCookie()"/></td></tr>
+&nbsp;
+<tr><td colspan = "2" align  = "center">
+<a href = "register.html" >Registration </a></td></tr><br>
+</table>
+
+<th>
+<a href = "mobile.html" >mobile shopping </a><br>
+<a href = "laptop.html" >laptop shopping </a>
+<br><a href = "car.html" >car shopping </a>
+<br><a href = "watch.html" >watch shopping </a>
+<br><a href = "men.html" >men formals </a>
+<br><a href = "women.html" >women formals </a>
+</th>
+<br>
+<marquee>
+<font size="15" color="red" face="verdana" >
+abc shopping site</font>
+<img src="images/mobile.jpg" >
+<img src="images/watch.jpg" >
+<img src="images/car.jpg" >
+<img src="images/laptop.jpg" >
+<img src="images/men.jpg" >
+<img src="images/women.jpg" >
+</marquee>
+</form></td></tr>
+</table></body></html> 
